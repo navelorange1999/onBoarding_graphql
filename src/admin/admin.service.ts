@@ -10,12 +10,17 @@ export class AdminService {
     @InjectModel('AdminModel') private adminModel: Model<AdminModel>,
   ) {}
 
-  login(username: string, password: string) {
+  getAdminModelByUsernameAndPassword(username: string, password: string) {
     const res = this.adminModel.findOne({ username, password });
     return res;
   }
 
-  registe(createAdminDto) {
+  getAllAdmin() {
+    const res = this.adminModel.find();
+    return res;
+  }
+
+  createAdmin(createAdminDto) {
     return new this.adminModel(createAdminDto).save();
   }
 }

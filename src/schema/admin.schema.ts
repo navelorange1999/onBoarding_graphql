@@ -5,6 +5,9 @@ import { Document } from 'mongoose';
 @ObjectType()
 @Schema()
 export class AdminModel extends Document {
+  @Field()
+  _id: string;
+
   @Field({ nullable: false })
   @Prop()
   username: string;

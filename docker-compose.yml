@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+    database:
+        image: mongo:4.2.2
+        restart: always
+        volumes: 
+            - ~/data/db:/data/db
+        # networks: 
+        #     - nest-network
+        ports: 
+            - 27017:27017
+    # web:
+    #     image: nest_graphql
+    #     depends_on: 
+    #         - database
+    #     ports: 
+    #         - 3001:3001
+    #     networks: 
+    #         - nest-network
+networks: 
+    nest-network:
+        driver: bridge

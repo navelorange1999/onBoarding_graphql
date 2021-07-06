@@ -12,7 +12,7 @@ import { AdminModule } from './admin/admin.module';
       // typePaths: ['./**/*.graphql'],
       autoSchemaFile: 'schema.gql',
     }),
-    MongooseModule.forRoot('mongodb://localhost/onBoarding'),
+    MongooseModule.forRoot('mongodb://localhost:27017/onBoarding'),
     AdminModule,
   ],
   controllers: [AppController],

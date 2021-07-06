@@ -3,14 +3,16 @@
 # ------------------------------------------------------
 
 type AdminModel {
+  _id: String!
   username: String!
   password: String!
 }
 
 type Query {
-  login(password: String!, username: String!): AdminModel!
+  getAdminModelByUsernameAndPassword(password: String!, username: String!): AdminModel!
+  getAllAdmin: [AdminModel!]!
 }
 
 type Mutation {
-  regsite(password: String!, username: String!): AdminModel!
+  createAdmin(password: String!, username: String!): AdminModel!
 }
